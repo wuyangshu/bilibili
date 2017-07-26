@@ -262,9 +262,9 @@ onShareAppMessage: function onShareAppMessage() {
   
   这是我的写法，下面给出api内容，可以根据不同人的想法进行修改。
   
-## 分享api格式
+#### 分享api格式
    ```
-  Page({
+({
   onShareAppMessage: function () {
     return {
       title: '自定义分享标题',
