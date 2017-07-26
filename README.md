@@ -259,7 +259,9 @@ onShareAppMessage: function onShareAppMessage() {
     }
   }
   ```
+  
   这是我的写法，下面给出api内容，可以根据不同人的想法进行修改。
+  
    ```
   Page({
   onShareAppMessage: function () {
@@ -270,6 +272,7 @@ onShareAppMessage: function onShareAppMessage() {
   }
 })
  ```
+ 
  但是这个id很多人不明白是什么id，之前我也不明白，后来发现这个id就是你要分享的这篇文章的id，但是一定要注意异步与同步的问题。
  
  ## 踩过的坑<(｀^´)>
