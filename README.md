@@ -1,4 +1,7 @@
 # 微信小程序学习  仿哔哩哔哩制作的小程序（待完善）
+## 项目预览图
+
+![image](https://github.com/wuyangshu/bilibili/raw/master/GIF.gif)
 
 ## 小程序？大改变？
 之前就被朋友安利使用小程序，最近接近了小程序，发现了它竟然带来了一场“大革命”。
