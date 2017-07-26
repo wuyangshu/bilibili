@@ -1,0 +1,130 @@
+<view class="play">
+ <view class="nav-bar">
+    <view class="nav-wrp">
+        <!-- LOGO -->
+        <navigator class="a logo">
+          <!-- <image src="../../resources/images/logo.png" ></image> -->
+        </navigator>
+        <!-- 观看历史 -->
+        <navigator class="a cell">
+            <view class="nav-icon bili-icon-history">
+              <image src="../../resources/images/lishi.png"></image>
+            </view>
+        </navigator>
+        <!-- 搜索框 -->
+        <view class="nav-bar cell-search">
+            <input type="search" placeholder="热门番剧">
+            </input>
+        </view>
+    </view>
+</view>
+<view class="player-container">
+<view class="player-box">
+ <video id="myVideo" style="height:{{videoHeight}}px;width:{{videoWidth}}px" src="http://xurenjie.cn:3000/video/xurenjiefather.mp4" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+ </view>
+</view>
+<view class="videoPage">
+  <button class="videoshare" open-type="share" bindtap="onShareAppMessage">
+     <view class="video-btn">
+      <view class="video-pic">
+       <image src="../../resources/images/share.png"></image>
+      </view>
+      <text>分享</text>
+    </view> 
+  </button>
+  <button class="videocollect">
+  <view class="video-btn">
+      <view class="video-pic">
+       <image src="../../resources/images/collect.png"></image>
+      </view>
+      <text>收藏</text> 
+    </view> 
+  </button>
+  <button class="videodownload">
+  <view class="video-btn">
+      <view class="video-pic">
+       <image src="../../resources/images/download.png"></image>
+      </view>
+      <text>下载</text> 
+    </view> 
+  </button>
+</view>
+<view class="danmu">
+<view class="danmuinput" style="background:#fff;">
+            <input type="text" bindfocus="powerDrawer" data-statu="open" placeholder="热门番剧">
+            </input>
+        </view>
+  <view class="senddanmu">
+  <view class="btn" bindtap="powerDrawer" data-statu="open">发送弹幕</view> 
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}"> 
+ <!--drawer content-->
+ <view class="drawer_content"> 
+ <view class="drawer_title line">
+ <view class="btn-area">
+<view class="weui-cell weui-cell_input">
+<view class="weui-cell__bd">
+<input class="weui-input" placeholder="请输入弹幕" bindblur="bindInputBlur" />
+</view>
+</view>
+<button type="primary" style="margin:30rpx; background:#EA6CAF;" bindtap="bindSendDanmu">发送弹幕</button>
+</view>
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+<view class="weui-cell weui-cell_switch">
+<view class="weui-cell__bd">随机颜色</view>
+<view class="weui-cell__ft">
+<switch checked bindchange="switchChange" color="#EA6CAF"/>
+</view>
+</view>
+<view class="colorstyle" bindtap="selectColor">
+<text>选择颜色</text>
+<view style="height:80rpx;width:80rpx;line-height: 100rpx;margin:10rpx;background-color:{{numberColor}}"></view>
+</view>
+ </view> 
+ </view> 
+</view> 
+  </view>
+</view>
+<view class="videoinfo">
+<view class="videoinfo-title">
+ <text>【Fate全系列】英灵乱斗: 夺回未来的战争「Grand Order」</text>
+ </view>
+ <view class="video-info">
+   <image class="video-info-play-pic" src="../../resources/images/play.png"></image>
+   <text class="video-info-play-number">5.1万</text>
+   <image class="video-info-play-pic" src="../../resources/images/danmu_32.png"></image>
+   <text class="video-info-play-number">1234</text>
+ </view>
+ <view class="video-introduce">
+      <text>最近是FGO和FZ的联动活动，所以特地给了闪闪、呆毛、大帝一大堆镜头....孔明本身的动作场景不多，但我还是强行给塞进去了23333 另外就是切嗣爸爸，虽然我给你的戏份少，但我给你儿子的戏份多呀！！....希望能感动到老天让我顺利出货这几位吧
+
+BGM: Brave Shine - Aimer</text>
+ </view>
+</view>
+<view class="video-upinfo">
+      <view class="flex-cont flex-simple">
+        <view class="s-img"><image src="../../resources/images/fanshi.jpg"></image></view>
+        <view class="flex-item">
+          <text class="s-tit">泛式</text>
+          <text class="s-desc">2天前投递</text>
+        </view>
+        <button plain style="display:block; color: #EA6CAF; border-color: #EA6CAF; margin-left:200rpx" class="marginview">关注</button>
+      </view>
+</view>
+<view class="video-taginfo">
+ <view class="video-taginfo-name">
+ <text>相关标签</text>
+ </view>
+ <view class="video-taginfo-t">
+ <view class="video-taginfo-tag">FATE/ZERO</view>
+ <view class="video-taginfo-tag">Brave Shine</view>
+ <view class="video-taginfo-tag">燃向</view>
+ </view>
+</view>
+</view>
+

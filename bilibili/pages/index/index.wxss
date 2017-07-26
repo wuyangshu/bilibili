@@ -1,0 +1,193 @@
+/**index.wxss**/
+/*频道*/
+.channel{
+    margin:200rpx 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    border-bottom: 10rpx solid #CCCCCC;
+}
+.channel .channel_single{
+    margin-top: -10px;
+    /*display: inline;*/
+}
+.channel .channel_single .channel_noname{
+    width: 25%;
+}
+.channel .channel_single .channel_noname .updatenum{
+    /*margin-top: -100px;
+    margin-left: 90px;*/
+    position: relative;
+    left: 70%;
+}
+.channel .channel_single .channel_noname image{
+    margin: 60rpx 10rpx 10rpx 10rpx;
+    margin-left: 60rpx;
+}
+.channel .channel_single .channel_noname .updatenum text{
+    font-size: 14px;
+    color: #fff;
+    background: #696969;
+}
+
+.channel .channel_single .channel_name{
+    margin: 10rpx 10rpx 60rpx 10rpx;
+    text-align: center;
+}
+.channel .channel_single .channel_name text{
+    font-size: 15px;
+    color: #222;
+    margin-top: 2rpx;
+    line-height: 10rpx;
+}
+/*直播*/
+.live1{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    border-bottom: 10rpx solid #CCCCCC;
+}
+.live1 .live_single{
+    margin-top: -10px;
+    /*display: inline;*/
+}
+.live1 .live1_single .live1_noname{
+    width: 20%;
+}
+.live1 .live1_single .live1_noname image{
+    margin: 5rpx 10rpx 5rpx 10rpx;
+    margin-left: 25rpx;
+}
+.live1 .live1_single .live1_noname .updatenum text{
+    font-size: 14px;
+    color: #fff;
+    background: #696969;
+}
+
+.live1 .live1_single .live1_name{
+    margin: 5rpx 10rpx 10rpx 10rpx;
+    text-align: center;
+}
+.live1 .live1_single .live1_name text{
+    font-size: 15px;
+    color: #222;
+    margin-top: 2rpx;
+    line-height: 10rpx;
+}
+/*我的*/
+.user {
+    overflow: auto;
+    min-height: 100%;
+    background-color: #f4f4f4;
+}
+.user-wrapper {
+    margin:210rpx 0 0 0;
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items:center;
+    border-bottom: 2rpx solid #e7e7e7;
+    border-top:2rpx solid #e7e7e7;
+    margin-bottom: 1.0625rem;
+    background-color: #fff;
+}
+    .flex-cont {
+      display: flex;
+      align-items: center;
+    }
+    .flex-item {
+      padding: 0 0.75rem;
+      flex: 1;
+    }
+    .s-tit {
+      font-size: 32rpx;
+      font-weight: 700;
+      margin-bottom: 20rpx;
+    }
+    .s-desc {
+      font-size: 24rpx;
+      color: #747570;
+    }
+    .s-tit, .s-desc {
+       display: block; 
+      line-height: 1.2;
+    }
+    .s-img image{
+      margin-left: 25rpx;
+      width: 150rpx;
+      height: 150rpx;
+      border-radius: 50%;
+    }
+    .act-wrapper {
+      margin-bottom: 1.75rem;
+    }
+    .act-wrapper .act-item {
+      display: flex;
+      align-items: center;
+      height: 2.75rem;
+      padding: 0 1.125rem;
+      border-bottom: 2rpx solid #e7e7e7;
+      background-color: #fff;
+    }
+    .bili-icon-history-2 image{
+    background-position: -130rpx -412rpx;
+    width: 50rpx;
+    height: 50rpx;
+    }
+    .act-wrapper .act-item .act-name {
+    flex: 1;
+    padding-left: 0.625rem;
+    color: #444;
+    font-size: 36rpx;
+    display: block;
+    font-weight: 600;
+    }
+    .bili-icon-arrow image{
+    background-position: -320rpx -412rpx;
+    width: 14rpx;
+    height: 24rpx;
+    }
+    .act-tooltip {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      color: #999;
+      font-size: 30rpx;
+      margin: 0 auto;
+      padding: 0.625rem 0;
+    }
+    .account-wrapper {
+      display: block;
+    }
+    .account-wrapper .account-btn {
+    display: block;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    background-color: #fff;
+    border-top: 2rpx solid #e7e7e7;
+    border-bottom: 2rpx solid #e7e7e7;
+    color: #444;
+    text-align: center;
+    font-size: 32rpx;
+    margin-bottom: 0.625rem;
+    }
+    .account-wrapper .account-register {
+    color: #de698c;
+    margin: 0 auto;
+    }
+    .reg-tooltip {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    color: #999;
+    font-size: 30rpx;
+    margin: 0;
+    margin-bottom: 182rpx;
+    padding: 0.625rem 0;
+}

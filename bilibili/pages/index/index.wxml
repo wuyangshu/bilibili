@@ -1,0 +1,516 @@
+<!--index.wxml-->
+<import src="../common/item.wxml" />
+
+<view class="wrapper">
+  <!-- 顶部导航 begin -->
+  <include src="../common/header.wxml" />
+  <!-- 顶部导航 end -->
+  <view class="nav-scroll">
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <text wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap"
+            class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}"
+            style=" padding-right:{{topdistance}}px;padding-left:{{topdistance}}px">{{item.name}}</text>
+    </scroll-view>
+  </view>
+</view>
+<block wx:if="{{currentId == 1001}}">
+<view class="slider-wrapper">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}"
+   interval="{{interval}}" duration="{{duration}}" indicator-active-color="#EA6CAF">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+           <navigator url="{{item.link}}" hover-class="navigator-hover">
+            <image src="{{item.url}}" class="slide-image" width="355" height="150" />
+           </navigator>
+        </swiper-item>
+      </block>
+</swiper>
+</view>
+
+<!-- 热门推荐 begin -->
+  <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/tuijian1.png"></image>
+        </view>
+        <text>热门推荐</text>
+      </view>
+      <view class="right hot">
+        <view class="bilibili-index-sprite bilibili-index-ranking">
+          <image src="../../resources/images/paihang.png"></image>
+        </view>
+        <text>排行榜</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{hotList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!-- 热门推荐 end -->
+  <!--动画 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/直播.png"></image>
+        </view>
+        <text>动画</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--动画 end-->
+  <!--番剧 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/番剧.png"></image>
+        </view>
+        <text>番剧</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--番剧 end-->
+  <!--国创 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/国创.png"></image>
+        </view>
+        <text>国创</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--国创 end-->
+  <!--音乐 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/音乐.png"></image>
+        </view>
+        <text>音乐</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--音乐 end-->
+  <!--舞蹈 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/舞蹈.png"></image>
+        </view>
+        <text>舞蹈</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--舞蹈 end-->
+  <!--科技 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/科技.png"></image>
+        </view>
+        <text>科技</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--科技 end-->
+  <!--游戏 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/游戏.png"></image>
+        </view>
+        <text>游戏</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--游戏 end-->
+  <!--娱乐 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/娱乐.png"></image>
+        </view>
+        <text>娱乐</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--娱乐 end-->
+  <!--鬼畜 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/鬼畜.png"></image>
+        </view>
+        <text>鬼畜</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--鬼畜 end-->
+  <!--电影 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/电影.png"></image>
+        </view>
+        <text>电影</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--电影 end-->
+  <!--电视剧 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/电视剧.png"></image>
+        </view>
+        <text>电视剧</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--电视剧 end-->
+  <!--生活 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/生活.png"></image>
+        </view>
+        <text>生活</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--生活 end-->
+  <!--时尚 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/时尚.png"></image>
+        </view>
+        <text>时尚</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--时尚 end-->
+  <!--广告 begin-->
+      <view class="row-container">
+    <navigator class="header">
+      <view class="left">
+        <view class="bilibili-index-sprite bilibili-index-hot">
+          <image src="../../resources/images/广告.png"></image>
+        </view>
+        <text>广告</text>
+      </view>
+      <view class="right">
+        <view class="bilibili-index-sprite bilibili-index-arrow">
+          <image src="../../resources/images/gengduo.png"></image>
+        </view>
+        <text>查看更多</text>
+      </view>
+    </navigator>
+    <view class="content-wrapper">
+      <block wx:for="{{animationList}}" wx:key="avid">
+        <!-- 使用热门推荐模板，传入当前循环对象item -->
+        <template is="jiefItem1" data="{{...item}}"/>
+      </block>
+    </view>
+  </view>
+  <!--广告 end-->
+    </block>
+    <block wx:if="{{currentId == 1002}}">
+      <!-- 番剧更新 begin -->
+      <view style="margin-top:180rpx;">
+    <view class="row-container">
+      <navigator class="header">
+        <view class="left">
+          <view class="bilibili-index-sprite bilibili-index-bangumi">
+            <image src="../../resources/images/fanju.png"></image>
+          </view>
+          <text>番剧更新</text>
+        </view>
+        <view class="right">
+          <text>查看更多番剧</text>
+          <view class="bilibili-index-sprite bilibili-index-arrow">
+            <image src="../../resources/images/gengduo.png"></image>
+          </view>
+        </view>
+      </navigator>
+      <view class="content-wrapper">
+        <block wx:for="{{bangumiList}}" wx:key="avid">
+          <!-- 使用正在直播模板，传入当前循环对象item -->
+          <template is="jiefItem3" data="{{...item}}"/>
+        </block>
+      </view>
+    </view>
+    </view>
+    <!-- 番剧更新 end -->
+    </block>
+    <block wx:if="{{currentId == 1003}}">
+    <view class="slider-wrapper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}"
+      interval="{{interval}}" duration="{{duration}}" indicator-active-color="#EA6CAF">
+          <block wx:for="{{imgUrls}}">
+            <swiper-item>
+              <navigator url="{{item.link}}" hover-class="navigator-hover">
+                <image src="{{item.url}}" class="slide-image" width="355" height="150" />
+              </navigator>
+            </swiper-item>
+          </block>
+    </swiper>
+    </view>
+    <view class="live1">
+      <block wx:for="{{live1name}}" wx:key="live1num" wx:for-item="live1numitem">
+        <view class="live1_single" style="width:{{live1distance}}px">
+          <view class="live1_noname">
+            <image src="{{live1numitem.icon}}"
+             style="width:100rpx;height:100rpx">
+               </image>
+          </view>
+          <view class="live1_name">
+            <text>{{live1numitem.name}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 正在直播 begin -->
+    <view class="row-container">
+      <navigator class="header">
+        <view class="left">
+          <view class="bilibili-index-sprite bilibili-index-live">
+            <image src="../../resources/images/zhibo.png"></image>
+          </view>
+          <text>正在直播</text>
+        </view>
+        <view class="right">
+          <text>查看更多直播</text>
+          <view class="bilibili-index-sprite bilibili-index-arrow">
+            <image src="../../resources/images/gengduo.png"></image>
+          </view>
+        </view>
+      </navigator>
+      <view class="content-wrapper">
+        <block wx:for="{{liveList}}" wx:key="avid">
+          <!-- 使用正在直播模板，传入当前循环对象item -->
+          <template is="jiefItem2" data="{{...item}}"/>
+        </block>
+      </view>
+    </view>
+    <!-- 正在直播 end -->
+    </block>
+    <!--分区  begin-->
+    <block wx:if="{{currentId == 1004}}">
+    <view class="channel">
+      <block wx:for="{{channelname}}" wx:key="channelnum" wx:for-item="channelnumitem">
+        <view class="channel_single" style="width:{{channeldistance}}px">
+          <view class="channel_noname">
+            <image src="{{channelnumitem.icon}}"
+             style="width:{{channeldistance-20}}rpx;height:{{channeldistance-20}}rpx">
+               </image>
+          </view>
+          <view class="channel_name">
+            <text>{{channelnumitem.name}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!--分区  end-->
+  <!--我的  begin-->
+  <block wx:if="{{currentId == 1005}}">
+  <view class="user">
+    <view class="user-wrapper">
+        <view class="flex-cont flex-simple">
+          <view class="s-img"><image src="../../resources/images/avatar.png"></image></view>
+          <view class="flex-item">
+            <text class="s-tit">游客</text>
+            <text class="s-desc">硬币：-</text>
+          </view>
+        </view>
+    </view>
+  <view class="act-wrapper">
+  <view class="act-item">
+  <view class="bili-icon-history-2"><image src="../../resources/images/历史记录.png"></image></view>
+  <text class="act-name">历史记录</text>
+  <view class="bili-icon-arrow"><image src="../../resources/images/more.png"></image></view>
+  </view>
+  <text class="act-tooltip">登陆后可以同步播放记录哦～</text>
+  </view>
+  <view class="account-wrapper">
+  <text class="account-btn">登  录</text>
+  <text class="account-register account-btn">注 册</text>
+  <text class="reg-tooltip">据说用客户端注册可以减少答题哟～</text>
+  </view>
+  </view>
+  </block>
+  <!--我的  end-->

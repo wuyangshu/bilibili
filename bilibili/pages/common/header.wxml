@@ -1,0 +1,44 @@
+<!-- 顶部工具条-begin -->
+<view class="nav-bar">
+    <view class="nav-wrp">
+        <!-- LOGO -->
+        <navigator class="a logo">
+          <!-- <image src="../../resources/images/logo.png" ></image> -->
+        </navigator>
+        <!-- 观看历史 -->
+        <navigator class="a cell">
+            <view class="nav-icon bili-icon-history">
+              <image src="../../resources/images/lishi.png"></image>
+            </view>
+        </navigator>
+        <!-- 搜索框 -->
+        <view class="a cell">
+            <view class="nav-icon bili-icon-search">
+              <image src="../../resources/images/sousuo.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 顶部工具条-end -->
+
+<!-- 导航菜单-begin -->
+<!--<view class="flex-bar main">
+    <view class="flex-bar-in">
+        <view class="li nav-item on">
+            <navigator url="/pages/index/index" class="a">推荐</navigator>
+        </view>
+        <view class="li nav-item">
+            <navigator url="/pages/animation/animation" class="a">追番</navigator>
+        </view>
+        <view class="li nav-item">
+            <navigator url="/pages/category/category" class="a">分区</navigator>
+        </view>
+        <view class="li nav-item">
+            <navigator url="/pages/live/live" class="a">直播</navigator>
+        </view>
+        <view class="li nav-item">
+            <navigator url="/pages/user/user" class="a">我的</navigator>
+        </view>
+    </view>
+  </view>  -->
+  <!-- 导航菜单-end -->

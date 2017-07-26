@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/play/play",    
+    "pages/selectColor/selectColor"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#EA6CAF",
+    "navigationBarTitleText": "哔哩哔哩",
+    "navigationBarTextStyle":"white"
+  }
+}
