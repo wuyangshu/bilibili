@@ -1,4 +1,4 @@
-# 微信小程序学习  仿哔哩哔哩制作的小程序（待完善）
+# 微信小程序学习  哔哩哔哩小程序（待完善）
 ## 项目预览图
 
 ![image](https://github.com/wuyangshu/bilibili/raw/master/GIF.gif)
